@@ -1,0 +1,20 @@
+{
+  "name": "moviesite",
+  "version": "1.0.0",
+  "description": "my little movie-site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "movie",
+    "site"
+  ],
+  "author": "fls",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jade": "^1.11.0",
+    "moment": "^2.19.2"
+  }
+}
