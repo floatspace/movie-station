@@ -9,7 +9,7 @@ block content
                     th 国家
                     th 上映年份
                     th 录入时间
-                    th 查询
+                    th 查看
                     th 更新
                     th 删除
             tbody
@@ -18,11 +18,13 @@ block content
                         td #{movie.title}
                         td #{movie.doctor}
                         td #{movie.country}
-                        td #{movie.year}
-                        td #{movie.createTime}
+                        td #{moment(movie.year).format('MM/DD/YYYY')}
+                        td #{moment(movie.meta.createAt).format('MM/DD/YYYY')}
                         td 
-                            a(id='#{movie.id}', href='#') 查询
+                            a(href='/movie/#{movie.id}') 查看
                         td
-                            a(id='#{movie.id}', href='#') 更新
+                            a(href='/admins/update/#{movie.id}') 更新
                         td
-                            a(id='#{movie.id}', href='#') 删除
+                            //- a(href='/admin/del/#{movie.id}') 删除
+                            a(href='javascript:void(0)', class='movie-del', data-id="#{movie.id}") 删除
+    script(src='/js/admin.js', type='text/javascript')

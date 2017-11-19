@@ -7,5 +7,5 @@ block content
                     div.thumbnail
                         img(src='#{movie.poster}', alt='#{movie.title}', style='width:100%; height: 200px')
                         div.caption
-                            h4 #{movie.title}
-                            a.btn.btn-primary(href='/movie/#{movie.id}', role='button') 播放
+                            h5 #{movie.title}
+                            a.btn.btn-primary(href='/movie/#{movie._id}', role='button') 播放

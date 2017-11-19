@@ -38,8 +38,13 @@ MovieSchema.statics = {
     },
     findById: function(id, cb) {
         return this
-            .findOne({id: id})
+            .findOne({_id: id})
             .exec(cb);
+    },
+    removeById: function(id, cb) {
+        return this
+            .remove({_id: id})
+            .exec(cb)
     }
 };
 module.exports = MovieSchema;

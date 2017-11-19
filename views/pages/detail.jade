@@ -3,7 +3,8 @@ block content
     div.container
         div.row
             div.col-md-7
-                video(src="#{movie.flash}", controls="controls", width="100%") 您的浏览器不支持video标签                
+                video(preload="auto", autoplay="", controls="controls", name="media")
+                    source(src="#{movie.flash}", type="video/mp4")
             div.col-md-5
                 dl.dl-horizontal
                     dt 导演
@@ -13,7 +14,7 @@ block content
                     dt 名称
                     dd #{movie.title}
                     dt 上映年份
-                    dd #{movie.year}
+                    dd #{moment(movie.year).format('MM/DD/YYYY')}
                     dt 语种
                     dd #{movie.language}
                     dt 简介

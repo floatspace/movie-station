@@ -1,0 +1,3 @@
+1. 开启数据库： mongod --dbpath c:/mongo  
+2. 打开另外一个控制台cmd
+	mongo  > use movies  > show collections  db.createCollection("movies") db.movies.insert({"name":"xxx"})
