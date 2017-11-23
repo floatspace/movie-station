@@ -1,0 +1,58 @@
+nav.navbar.navbar-default
+  div.container-fluid
+    div.navbar-header
+      button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar-collapse-1")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/') 小小电影站
+    div.collapse.navbar-collapse#navbar-collapse-1
+      ul.nav.navbar-nav
+        li.active
+          a(href='#') 电影
+      ul.nav.navbar-nav.navbar-right
+        if user
+          li
+            a(href='###') 欢迎你 #{user} 
+          li
+            a(href='/users/logout') 退出 
+        else
+          li
+            a(href='###', data-toggle='modal', data-target='#registerModal') 注册 
+          li
+            a(href='###', data-toggle='modal', data-target='#loginModal') 登录          
+div#registerModal.modal.modal-fade
+  div.modal-dialog
+    div.modal-content
+      form(method="post", action='/users/register')
+        div.modal-header
+          button(type='button', class='close', data-dismiss='modal')
+            span &times;
+          h4.modal-title 注册
+        div.modal-body
+            div.form-group
+              label 用户名
+              input(type='text', name='username', class='form-control', placeholder='请输入用户名')
+            div.form-group
+              label 密码
+              input(type='password', name='password', class='form-control', placeholder='请输入密码')
+        div.modal-footer.text-center
+          button(type='submit', class='btn btn-primary') 注册
+div#loginModal.modal.modal-fade
+  div.modal-dialog
+    div.modal-content
+      form(method="post", action='/users/login')
+        div.modal-header
+          button(type='button', class='close', data-dismiss='modal')
+            span &times;
+          h4.modal-title 登录
+        div.modal-body
+            div.form-group
+              label 用户名
+              input(type='text', name='username', class='form-control', placeholder='请输入用户名')
+            div.form-group
+              label 密码
+              input(type='password', name='password', class='form-control', placeholder='请输入密码')
+        div.modal-footer.text-center
+          button(type='submit', class='btn btn-primary') 登录
